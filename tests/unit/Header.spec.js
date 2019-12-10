@@ -2,7 +2,7 @@
 
 // and the component you want to test
 
-import { mount } from '@vue/test-utils'
+import {mount} from '@vue/test-utils'
 
 import Header from "../../src/components/Header.vue";
 
@@ -15,13 +15,13 @@ describe('Header', () => {
 
 
     it('renders the correct weekday', () => {
-        console.log("HTML",wrapper.html())
+        //console.log("HTML",wrapper.html())
 
         let today = new Date();
         let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-        let weekday = days[ today.getDay() ].toUpperCase()
-        console.log("HTML",weekday)
+        let weekday = days[today.getDay()].toUpperCase()
+        console.log("HTML", weekday)
         expect(wrapper.html()).toContain(weekday)
 
     })
@@ -30,8 +30,8 @@ describe('Header', () => {
 
         let today = new Date();
 
-        let date = today.getDate() < 10 ?  `0${today.getDate()}` : today.getDate();
-        console.log("HTML",date)
+        let date = today.getDate() < 10 ? `0${today.getDate()}` : today.getDate();
+        console.log("HTML", date)
         expect(wrapper.html()).toContain(date)
 
     })
@@ -39,10 +39,10 @@ describe('Header', () => {
     it('renders the correct month', () => {
 
         let today = new Date();
-        let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct',	'Nov', 'Dec'];
+        let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-        let month = months[ today.getMonth() ].toUpperCase()
-        console.log("HTML",month)
+        let month = months[today.getMonth()].toUpperCase()
+        console.log("HTML", month)
         expect(wrapper.html()).toContain(month)
 
     })
@@ -52,7 +52,7 @@ describe('Header', () => {
         let today = new Date();
 
         let year = today.getFullYear()
-        console.log("HTML",year)
+        console.log("HTML", year)
         expect(wrapper.html()).toContain(year)
 
     })

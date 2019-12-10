@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils'
+import {mount} from '@vue/test-utils'
 
 import List from "../../src/components/List.vue";
 
@@ -29,24 +29,25 @@ describe('Renders correct amount of items and done items are updated correctly',
     ]
 
 
-    const wrapper = mount(List, {propsData: {
-            list:propsList
-        }})
-
+    const wrapper = mount(List, {
+        propsData: {
+            list: propsList
+        }
+    })
 
 
     it('renders x amount of items', () => {
 
         //console.log("HTML",wrapper.html())
 
-        let listItems=wrapper.findAll(".list-item");
+        let listItems = wrapper.findAll(".list-item");
 
         expect(listItems.length).toEqual(propsList.length);
 
     })
     it('checks amount of done items', () => {
 
-        let doneItems=wrapper.findAll(".done");
+        let doneItems = wrapper.findAll(".done");
 
         expect(doneItems.length).toEqual(propsList.filter(item => item.done).length);
 
