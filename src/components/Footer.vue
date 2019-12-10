@@ -20,7 +20,7 @@
         },
         methods: {
             addItem: function () {
-                this.$props.add(this.title);
+                //this.$props.add(this.title);
                 this.title = "";
                 this.open = false
             }
